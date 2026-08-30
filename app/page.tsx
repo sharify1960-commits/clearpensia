@@ -303,7 +303,7 @@ export default function Home() {
         gap: '12px',
         direction: 'rtl'
       }}>
-        <span>מבצע !!!!  לזריזים שביניכם חינם עד 1.12.26</span>
+        <span> מבצע  !!!!  לזריזים שביניכם חינם עד 1.12.26</span>
       </div>
 
       {/* הבהרת אי-ייעוץ */}
