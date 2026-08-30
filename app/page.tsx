@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'interface' in globalThis ? {} : { useState, useEffect };
 
 interface UserLog {
   id: string;
@@ -92,7 +92,6 @@ export default function Home() {
     const trimmedPhone = phone.trim();
     const isWhitelisted = whitelistPhones.includes(trimmedPhone);
 
-    // נשמור לדוח רק אם זה לא הוכנס דרך כפתור הדוגמה וגם לא ברשימת הלבנה
     if (!isDemoLoaded && !isWhitelisted) {
       const newLog: UserLog = {
         id: Date.now().toString(),
@@ -254,7 +253,7 @@ export default function Home() {
             𝓡𝓢
           </span>
           <div>
-            <h1 style={{ margin: 0, color: '#ffffff', fontSize: '1.8rem', fontWeight: '900', letterSpacing: '0.5px' }}>מהיום אתה מחליט על גובה הפנסיה החודשית שלך</h1>
+            <h1 style={{ margin: 0, color: '#ffffff', fontSize: '1.8rem', fontWeight: '900', letterSpacing: '0.5px' }}>מהיום אתה מחליט על בגובה הפנסיה</h1>
             <p style={{ margin: '0.3rem 0 0 0', fontSize: '1.1rem', color: '#63b3ed', fontWeight: '700' }}>POWER-PENSIA</p>
           </div>
         </div>
@@ -286,7 +285,7 @@ export default function Home() {
         </div>
       </header>
 
-      {/* באנר מבצע מיוחד */}
+      {/* רצועת המבצע העליונה */}
       <div style={{
         background: 'linear-gradient(135deg, #1e3a8a, #3b82f6)',
         color: '#ffffff',
@@ -303,7 +302,7 @@ export default function Home() {
         gap: '12px',
         direction: 'rtl'
       }}>
-        <span> מבצע  !!!!  לזריזים שביניכם חינם עד 1.12.26</span>
+        <span>מבצע!!!! לדרזיים שביניכם חינם עד 1.12.26</span>
       </div>
 
       {/* הבהרת אי-ייעוץ */}
@@ -321,8 +320,41 @@ export default function Home() {
         <div style={{ display: 'flex', alignItems: 'flex-start', gap: '0.6rem' }}>
           <span style={{ fontWeight: '800', color: '#1a365d', fontSize: '1.05rem', minWidth: '85px' }}>מי אנחנו:</span>
           <span style={{ fontSize: '1rem', color: '#2d3748', fontWeight: '600', lineHeight: '1.5' }}>
-            פלטפורמה טכנולוגית מתקדמת המעניקה למבוטחים כלים עצמאיים לניתוח מעמיק של החיסכון הפנסיוני שלהם מול נתוני השוק.
+            מערכת זו נועדה לאפשר לכל חוסך לבצע בקרה נתונים עצמאית על קרן הפנסיה שלו. השוואת דמי הניהול, בחינת מסלולי ההשקעה והבנת ההשפעה ארוכת הטווח של דמי הניהול והתשואות מאפשרות לקבל החלטות מושכלות מול הגופים המוסדיים.
           </span>
+        </div>
+        
+        {/* כפתור בולט למציאת הפרטים ועזרה */}
+        <div style={{ background: '#f0f4f8', border: '1px solid #cbd5e0', borderRadius: '8px', padding: '1rem', textAlign: 'center', marginTop: '0.5rem' }}>
+          <h3 style={{ margin: '0 0 0.5rem 0', color: '#1a365d', fontSize: '1rem' }}>איפה ניקח את הפרטים שלי לצורך בדיקה?</h3>
+          <p style={{ margin: '0 0 0.8rem 0', fontSize: '0.9rem', color: '#4a5568' }}>
+            את כל הנתונים תמצא במסלקה הפנסיונית או בדו"ח השנתי של קרן הפנסיה שלך. מתלבט או לא מסתדר? אל דאגה! שלח אלינו מייל ונעזור לך בשמחה — הכל כחלק מהשירות וללא מחיר נוסף.
+          </p>
+          <a 
+            href="mailto:support@clearpensia.com?subject=עזרה במציאת נתונים פנסיוניים" 
+            style={{ display: 'inline-block', background: '#3182ce', color: 'white', padding: '0.5rem 1rem', borderRadius: '6px', textDecoration: 'none', fontWeight: 'bold', fontSize: '0.9rem' }}
+          >
+            שלח מייל לקבלת עזרה בחינם
+          </a>
+        </div>
+
+        {/* הסבר על נתוני המפתח */}
+        <div style={{ marginTop: '0.5rem', borderTop: '1px solid #e2e8f0', paddingTop: '0.8rem' }}>
+          <h4 style={{ margin: '0 0 0.5rem 0', color: '#2d3748', fontSize: '0.95rem' }}>הסבר על נתוני המפתח והשפעתם על הפנסיה העתידית:</h4>
+          <ul style={{ margin: 0, paddingRight: '1.2rem', fontSize: '0.9rem', color: '#4a5568', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+            <li>
+              <strong>דמי ניהול מהפקדה:</strong> נגבים מדי חודש מההפקדה השוטפת. 
+              <span style={{ display: 'block', fontSize: '0.85rem', color: '#718096' }}>השפעה: מקטין ישירות את הסכום שמופקד לחיסכון בכל חודש, ולכן מצמצם את הצבירה לאורך השנים.</span>
+            </li>
+            <li>
+              <strong>דמי ניהול מצבירה:</strong> נגבים מדי חודש מסך החיסכון המצטבר בקרן.
+              <span style={{ display: 'block', fontSize: '0.85rem', color: '#718096' }}>השפעה: בעל ההשפעה הגדולה ביותר בטווח הארוך, מכיוון שהוא אוכל אחוז מכלל הקרן שגדלה במשך עשרות שנים (אפקט ריבית דריבית הפוך).</span>
+            </li>
+            <li>
+              <strong>מקדם המרה:</strong> המספר לפיו מחולק סך החיסכון הצבור כדי לקבל את קצבת הזקנה החודשית.
+              <span style={{ display: 'block', fontSize: '0.85rem', color: '#718096' }}>השפעה: קובע כמה כסף תקבל בפועל מדי חודש לפנסיה. מקדם נמוך יותר משמעותו קצבה חודשית גבוהה וטובה יותר עבורך.</span>
+            </li>
+          </ul>
         </div>
         
         <div style={{ display: 'flex', alignItems: 'flex-start', gap: '0.6rem', background: '#fffaf0', padding: '0.8rem 1rem', borderRadius: '8px', border: '1px solid #feebc8' }}>
@@ -677,48 +709,37 @@ export default function Home() {
                       cursor: 'pointer'
                     }}
                   >
-                    📖 מדריך ומקורות נתונים
+                    📄 מכתב למסלקה / חברה
                   </button>
                 </div>
-
+                
                 <button
                   onClick={handleResetToStart}
-                  style={{
-                    padding: '0.5rem 1rem',
-                    background: '#718096',
-                    color: '#fff',
-                    border: 'none',
-                    borderRadius: '6px',
-                    fontWeight: 'bold',
-                    cursor: 'pointer',
-                    fontSize: '0.85rem'
-                  }}
+                  style={{ padding: '0.5rem 1rem', background: '#718096', color: '#fff', border: 'none', borderRadius: '6px', cursor: 'pointer', fontSize: '0.85rem', fontWeight: 'bold' }}
                 >
-                  ⬅️ חזרה למסך הקודם
+                  🔄 ערוך נתונים מחדש
                 </button>
               </div>
 
               {activeTab === 'simulator' ? (
-                <>
-                  <div style={{ textAlign: 'center', borderBottom: '2px solid #e2e8f0', paddingBottom: '1rem', marginBottom: '1.5rem' }}>
-                    <h2 style={{ color: '#2b6cb0', margin: 0 }}>תוצאות ניתוח והשוואת מצב קיים</h2>
-                    <p style={{ color: '#718096', margin: '0.3rem 0 0 0', fontSize: '0.9rem' }}>הערכת שווי נכסים וקצבה חודשית לפי נתוני החיסכון שהוזנו</p>
-                  </div>
-
-                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1.5rem' }}>
-                    <div style={{ background: '#ebf8ff', padding: '1.2rem', borderRadius: '8px', borderRight: '4px solid #2b6cb0', textAlign: 'center' }}>
-                      <span style={{ fontSize: '0.85rem', color: '#4a5568', fontWeight: 'bold' }}>הון מצטבר בגיל {retireAge}:</span>
-                      <h3 style={{ margin: '0.5rem 0 0 0', fontSize: '1.6rem', color: '#2b6cb0' }}>₪{estimatedSavings.toLocaleString()}</h3>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+                  
+                  {/* סיכום תוצאות מרכזי */}
+                  <div style={{ background: 'linear-gradient(135deg, #ebf8ff 0%, #eef2f7 100%)', padding: '1.5rem', borderRadius: '10px', border: '1px solid #bee3f8', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', textAlign: 'center' }}>
+                    <div>
+                      <span style={{ fontSize: '0.9rem', color: '#4a5568', fontWeight: 'bold' }}>צבירה חזויה בפרישה:</span>
+                      <div style={{ fontSize: '1.6rem', fontWeight: '900', color: '#2b6cb0', marginTop: '0.3rem' }}>₪{estimatedSavings.toLocaleString()}</div>
                     </div>
-                    <div style={{ background: '#f0fff4', padding: '1.2rem', borderRadius: '8px', borderRight: '4px solid #38a169', textAlign: 'center' }}>
-                      <span style={{ fontSize: '0.85rem', color: '#4a5568', fontWeight: 'bold' }}>קצבה חודשית משוערת:</span>
-                      <h3 style={{ margin: '0.5rem 0 0 0', fontSize: '1.6rem', color: '#276749' }}>₪{estimatedMonthlyPension.toLocaleString()}</h3>
+                    <div>
+                      <span style={{ fontSize: '0.9rem', color: '#4a5568', fontWeight: 'bold' }}>קצבה חודשית משוערת:</span>
+                      <div style={{ fontSize: '1.6rem', fontWeight: '900', color: '#276749', marginTop: '0.3rem' }}>₪{estimatedMonthlyPension.toLocaleString()}</div>
                     </div>
                   </div>
 
-                  {/* שדות שליטה אינטראקטיביים בתוך הסימולטור */}
-                  <div style={{ background: '#f7fafc', padding: '1.2rem', borderRadius: '10px', border: '1px solid #e2e8f0', marginBottom: '1.5rem' }}>
-                    <h4 style={{ margin: '0 0 1rem 0', color: '#2d3748' }}>🎛️ בקרת שינויים מהירה (צפה בהשפעה בזמן אמת):</h4>
+                  {/* בקרה אינטראקטיבית בזמן אמת */}
+                  <div style={{ background: '#f8fafc', padding: '1.2rem', borderRadius: '10px', border: '1px solid #cbd5e0', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+                    <h3 style={{ margin: 0, fontSize: '1rem', color: '#2d3748' }}>🎛️ שחק עם הנתונים ובדוק השפעה בזמן אמת:</h3>
+                    
                     <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '0.8rem' }}>
                       <div>
                         <label style={{ fontSize: '0.8rem', fontWeight: 'bold' }}>דמי ניהול הפקדה (%):</label>
@@ -727,7 +748,7 @@ export default function Home() {
                           step="0.001"
                           value={simDepositFee}
                           onChange={(e) => setSimDepositFee(e.target.value === '' ? '' : Number(e.target.value))}
-                          style={{ width: '100%', padding: '0.5rem', marginTop: '0.3rem', borderRadius: '6px', border: '1px solid #cbd5e0', background: '#fff' }}
+                          style={{ width: '100%', padding: '0.4rem', marginTop: '0.2rem', borderRadius: '4px', border: '1px solid #cbd5e0' }}
                         />
                       </div>
                       <div>
@@ -737,7 +758,7 @@ export default function Home() {
                           step="0.001"
                           value={simAccumulationFee}
                           onChange={(e) => setSimAccumulationFee(e.target.value === '' ? '' : Number(e.target.value))}
-                          style={{ width: '100%', padding: '0.5rem', marginTop: '0.3rem', borderRadius: '6px', border: '1px solid #cbd5e0', background: '#fff' }}
+                          style={{ width: '100%', padding: '0.4rem', marginTop: '0.2rem', borderRadius: '4px', border: '1px solid #cbd5e0' }}
                         />
                       </div>
                       <div>
@@ -746,74 +767,87 @@ export default function Home() {
                           type="number"
                           value={simEquityExposure}
                           onChange={(e) => setSimEquityExposure(e.target.value === '' ? '' : Number(e.target.value))}
-                          style={{ width: '100%', padding: '0.5rem', marginTop: '0.3rem', borderRadius: '6px', border: '1px solid #cbd5e0', background: '#fff' }}
+                          style={{ width: '100%', padding: '0.4rem', marginTop: '0.2rem', borderRadius: '4px', border: '1px solid #cbd5e0' }}
                         />
                       </div>
                     </div>
+
+                    {yearlySavings > 0 && (
+                      <div style={{ background: '#e6fffa', padding: '0.8rem', borderRadius: '6px', border: '1px solid #b2f5ea', color: '#234e52', fontSize: '0.9rem', fontWeight: 'bold', textAlign: 'center' }}>
+                        💡 חיסכון שנתי כתוצאה מהוזלת דמי ניהול: ₪{yearlySavings.toLocaleString()} בשנה!
+                      </div>
+                    )}
                   </div>
 
-                  {/* ניתוח תרחישי תשואה */}
-                  <div style={{ marginBottom: '1.5rem' }}>
-                    <h4 style={{ color: '#2b6cb0', marginBottom: '0.8rem' }}>📈 תרחישי תשואה עתידיים</h4>
-                    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '0.8rem', textAlign: 'center' }}>
-                      <div style={{ background: '#fff5f5', padding: '1rem', borderRadius: '8px', border: '1px solid #feb2b2' }}>
-                        <span style={{ fontSize: '0.8rem', color: '#c53030', fontWeight: 'bold' }}>שמרני (3.5%)</span>
-                        <div style={{ fontWeight: 'bold', fontSize: '1.1rem', margin: '0.3rem 0' }}>₪{pensionPessimistic.toLocaleString()} /חודש</div>
-                        <span style={{ fontSize: '0.75rem', color: '#718096' }}>הון: ₪{scenarioPessimistic.toLocaleString()}</span>
-                      </div>
-                      <div style={{ background: '#fffaf0', padding: '1rem', borderRadius: '8px', border: '1px solid #fbd38d' }}>
-                        <span style={{ fontSize: '0.8rem', color: '#dd6b20', fontWeight: 'bold' }}>בינוני (5.5%)</span>
-                        <div style={{ fontWeight: 'bold', fontSize: '1.1rem', margin: '0.3rem 0' }}>₪{pensionModerate.toLocaleString()} /חודש</div>
-                        <span style={{ fontSize: '0.75rem', color: '#718096' }}>הון: ₪{scenarioModerate.toLocaleString()}</span>
-                      </div>
-                      <div style={{ background: '#f0fff4', padding: '1rem', borderRadius: '8px', border: '1px solid #9ae6b4' }}>
-                        <span style={{ fontSize: '0.8rem', color: '#276749', fontWeight: 'bold' }}>אופטימי (8.0%)</span>
-                        <div style={{ fontWeight: 'bold', fontSize: '1.1rem', margin: '0.3rem 0' }}>₪{pensionOptimistic.toLocaleString()} /חודש</div>
-                        <span style={{ fontSize: '0.75rem', color: '#718096' }}>הון: ₪{scenarioOptimistic.toLocaleString()}</span>
-                      </div>
-                    </div>
+                  {/* טבלת תרחישי תשואה */}
+                  <div>
+                    <h3 style={{ fontSize: '1rem', color: '#2d3748', marginBottom: '0.8rem' }}>📈 תרחישי תשואה שונים עד הפרישה:</h3>
+                    <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.9rem', textAlign: 'center' }}>
+                      <thead>
+                        <tr style={{ background: '#edf2f7' }}>
+                          <th style={{ padding: '0.6rem', border: '1px solid #cbd5e0' }}>תרחיש</th>
+                          <th style={{ padding: '0.6rem', border: '1px solid #cbd5e0' }}>תשואה שנתית</th>
+                          <th style={{ padding: '0.6rem', border: '1px solid #cbd5e0' }}>צבירה חזויה</th>
+                          <th style={{ padding: '0.6rem', border: '1px solid #cbd5e0' }}>קצבה חודשית</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td style={{ padding: '0.5rem', border: '1px solid #cbd5e0', fontWeight: 'bold', color: '#c53030' }}>שמרני</td>
+                          <td style={{ padding: '0.5rem', border: '1px solid #cbd5e0' }}>3.5%</td>
+                          <td style={{ padding: '0.5rem', border: '1px solid #cbd5e0' }}>₪{scenarioPessimistic.toLocaleString()}</td>
+                          <td style={{ padding: '0.5rem', border: '1px solid #cbd5e0', fontWeight: 'bold' }}>₪{pensionPessimistic.toLocaleString()}</td>
+                        </tr>
+                        <tr style={{ background: '#f8fafc' }}>
+                          <td style={{ padding: '0.5rem', border: '1px solid #cbd5e0', fontWeight: 'bold', color: '#2b6cb0' }}>בינוני (ריאלי)</td>
+                          <td style={{ padding: '0.5rem', border: '1px solid #cbd5e0' }}>5.5%</td>
+                          <td style={{ padding: '0.5rem', border: '1px solid #cbd5e0' }}>₪{scenarioModerate.toLocaleString()}</td>
+                          <td style={{ padding: '0.5rem', border: '1px solid #cbd5e0', fontWeight: 'bold' }}>₪{pensionModerate.toLocaleString()}</td>
+                        </tr>
+                        <tr>
+                          <td style={{ padding: '0.5rem', border: '1px solid #cbd5e0', fontWeight: 'bold', color: '#276749' }}>אופטימי</td>
+                          <td style={{ padding: '0.5rem', border: '1px solid #cbd5e0' }}>8.0%</td>
+                          <td style={{ padding: '0.5rem', border: '1px solid #cbd5e0' }}>₪{scenarioOptimistic.toLocaleString()}</td>
+                          <td style={{ padding: '0.5rem', border: '1px solid #cbd5e0', fontWeight: 'bold' }}>₪{pensionOptimistic.toLocaleString()}</td>
+                        </tr>
+                      </tbody>
+                    </table>
                   </div>
 
-                  {/* חיסכון שנתי בדמי ניהול */}
-                  {yearlySavings > 0 && (
-                    <div style={{ background: '#ebf8ff', padding: '1rem', borderRadius: '8px', border: '1px solid #bee3f8', marginBottom: '1.5rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                      <div>
-                        <span style={{ fontWeight: 'bold', color: '#2b6cb0' }}>חיסכון פוטנציאלי בדמי ניהול עקב השינוי:</span>
-                        <div style={{ fontSize: '1.2rem', fontWeight: 'bold', color: '#2c5282' }}>₪{yearlySavings.toLocaleString()} בשנה</div>
-                      </div>
-                    </div>
-                  )}
-
-                  {/* מכתב פנייה לחברה */}
-                  <div style={{ background: '#f8fafc', padding: '1.2rem', borderRadius: '8px', border: '1px solid #cbd5e0' }}>
-                    <h4 style={{ margin: '0 0 0.5rem 0', color: '#2b6cb0' }}>✉️ טיוטת מכתב בקשה להוזלת דמי ניהול לחברה:</h4>
-                    <textarea
-                      readOnly
-                      value={negotiationLetter}
-                      rows={10}
-                      style={{ width: '100%', padding: '0.8rem', borderRadius: '6px', border: '1px solid #cbd5e0', background: '#fff', fontFamily: 'monospace', fontSize: '0.85rem', direction: 'rtl', marginBottom: '0.8rem' }}
-                    />
-                    <button
-                      onClick={handleCopyLetter}
-                      style={{ padding: '0.6rem 1.2rem', background: copied ? '#38a169' : '#2b6cb0', color: '#fff', border: 'none', borderRadius: '6px', cursor: 'pointer', fontWeight: 'bold', fontSize: '0.9rem' }}
-                    >
-                      {copied ? '✔️ הטקסט הועתק בהצלחה!' : '📋 העתק טיוטת מכתב'}
-                    </button>
-                  </div>
-                </>
+                </div>
               ) : (
-                <div>
-                  <h3 style={{ color: '#2b6cb0', marginTop: 0 }}>📖 מדריך ומקורות נתונים</h3>
-                  <p style={{ lineHeight: '1.6', color: '#4a5568' }}>
-                    מערכת זו נועדה לאפשר לכל חוסך לבצע בקרת נתונים עצמאית על קרן הפנסיה שלו. השוואת דמי הניהול, בחינת מסלולי ההשקעה והבנת ההשפעה ארוכת הטווח של דמי הניהול והתשואות מאפשרות לקבל החלטות מושכלות מול הגופים המוסדיים.
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+                  <h3 style={{ margin: 0, color: '#2d3748', fontSize: '1.1rem' }}>📄 טיוטת מכתב מוכנה למשלוח לחברה המנהלת / מסלקה:</h3>
+                  <p style={{ fontSize: '0.85rem', color: '#718096', margin: 0 }}>
+                    העתק את הנוסח הבא ושלח אותו לחברה המנהלת שלך כדי לדרוש דמי ניהול מופחתים בהתאם לסימולציה:
                   </p>
-                  <ul style={{ lineHeight: '1.8', color: '#4a5568', paddingRight: '1.2rem' }}>
-                    <li><strong>דמי ניהול מהפקדה:</strong> נגבים מדי חודש מההפקדה השוטפת.</li>
-                    <li><strong>דמי ניהול מצבירה:</strong> נגבים מדי חודש מסך החיסכון המצטבר בקרן.</li>
-                    <li><strong>מקדם המרה:</strong> המספר לפיו מחולק סך החיסכון הצבור כדי לקבל את קצבת הזקנה החודשית.</li>
-                  </ul>
+                  
+                  <textarea
+                    readOnly
+                    value={negotiationLetter}
+                    rows={12}
+                    style={{ width: '100%', padding: '0.8rem', borderRadius: '8px', border: '1px solid #cbd5e0', background: '#f8fafc', fontFamily: 'monospace', fontSize: '0.85rem', direction: 'rtl' }}
+                  />
+
+                  <button
+                    onClick={handleCopyLetter}
+                    style={{
+                      padding: '0.8rem',
+                      background: copied ? '#38a169' : '#3182ce',
+                      color: '#fff',
+                      border: 'none',
+                      borderRadius: '8px',
+                      cursor: 'pointer',
+                      fontWeight: 'bold',
+                      fontSize: '1rem',
+                      transition: 'background 0.2s'
+                    }}
+                  >
+                    {copied ? '✅ הטקסט הועתק בהצלחה ללוח!' : '📋 העתק טיוטת מכתב ללוח'}
+                  </button>
                 </div>
               )}
+
             </div>
           )}
         </main>
