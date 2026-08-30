@@ -305,62 +305,80 @@ export default function Home() {
         <span>מבצע!!!! לדרזיים שביניכם חינם עד 1.12.26</span>
       </div>
 
-      {/* הבהרת אי-ייעוץ */}
+      {/* מדריך מורחב בכניסה לדף */}
       <div style={{ 
         background: '#fff', 
-        padding: '1.2rem 1.5rem', 
+        padding: '1.5rem', 
         borderRadius: '10px', 
         marginBottom: '1.5rem', 
         border: '1px solid #cbd5e0', 
         boxShadow: '0 4px 10px rgba(0,0,0,0.04)',
         display: 'flex',
         flexDirection: 'column',
-        gap: '0.8rem'
+        gap: '1.2rem'
       }}>
-        <div style={{ display: 'flex', alignItems: 'flex-start', gap: '0.6rem' }}>
-          <span style={{ fontWeight: '800', color: '#1a365d', fontSize: '1.05rem', minWidth: '85px' }}>מי אנחנו:</span>
-          <span style={{ fontSize: '1rem', color: '#2d3748', fontWeight: '600', lineHeight: '1.5' }}>
-            מערכת זו נועדה לאפשר לכל חוסך לבצע בקרה נתונים עצמאית על קרן הפנסיה שלו. השוואת דמי הניהול, בחינת מסלולי ההשקעה והבנת ההשפעה ארוכת הטווח של דמי הניהול והתשואות מאפשרות לקבל החלטות מושכלות מול הגופים המוסדיים.
-          </span>
-        </div>
-        
-        {/* כפתור בולט למציאת הפרטים ועזרה */}
-        <div style={{ background: '#f0f4f8', border: '1px solid #cbd5e0', borderRadius: '8px', padding: '1rem', textAlign: 'center', marginTop: '0.5rem' }}>
-          <h3 style={{ margin: '0 0 0.5rem 0', color: '#1a365d', fontSize: '1rem' }}>איפה ניקח את הפרטים שלי לצורך בדיקה?</h3>
-          <p style={{ margin: '0 0 0.8rem 0', fontSize: '0.9rem', color: '#4a5568' }}>
-            את כל הנתונים תמצא במסלקה הפנסיונית או בדו"ח השנתי של קרן הפנסיה שלך. מתלבט או לא מסתדר? אל דאגה! שלח אלינו מייל ונעזור לך בשמחה — הכל כחלק מהשירות וללא מחיר נוסף.
+        <div>
+          <h3 style={{ margin: '0 0 0.5rem 0', color: '#1a365d', fontSize: '1.1rem' }}>📌 מדריך למשתמש: איפה מוצאים את הנתונים וכיצד הם משפיעים על הפנסיה?</h3>
+          <p style={{ margin: 0, fontSize: '0.95rem', color: '#4a5568', lineHeight: '1.6' }}>
+            מערכת זו נועדה לאפשר לכל חוסך לבצע בקרה וניהול עצמאי של קרן הפנסיה שלו מול הגופים המוסדיים. להלן ההסבר המלא כיצד לאסוף את הנתונים ומה המשמעות של כל פרמטר.
           </p>
-          <a 
-            href="mailto:support@clearpensia.com?subject=עזרה במציאת נתונים פנסיוניים" 
-            style={{ display: 'inline-block', background: '#3182ce', color: 'white', padding: '0.5rem 1rem', borderRadius: '6px', textDecoration: 'none', fontWeight: 'bold', fontSize: '0.9rem' }}
-          >
-            שלח מייל לקבלת עזרה בחינם
-          </a>
         </div>
 
-        {/* הסבר על נתוני המפתח */}
-        <div style={{ marginTop: '0.5rem', borderTop: '1px solid #e2e8f0', paddingTop: '0.8rem' }}>
-          <h4 style={{ margin: '0 0 0.5rem 0', color: '#2d3748', fontSize: '0.95rem' }}>הסבר על נתוני המפתח והשפעתם על הפנסיה העתידית:</h4>
-          <ul style={{ margin: 0, paddingRight: '1.2rem', fontSize: '0.9rem', color: '#4a5568', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-            <li>
-              <strong>דמי ניהול מהפקדה:</strong> נגבים מדי חודש מההפקדה השוטפת. 
-              <span style={{ display: 'block', fontSize: '0.85rem', color: '#718096' }}>השפעה: מקטין ישירות את הסכום שמופקד לחיסכון בכל חודש, ולכן מצמצם את הצבירה לאורך השנים.</span>
-            </li>
-            <li>
-              <strong>דמי ניהול מצבירה:</strong> נגבים מדי חודש מסך החיסכון המצטבר בקרן.
-              <span style={{ display: 'block', fontSize: '0.85rem', color: '#718096' }}>השפעה: בעל ההשפעה הגדולה ביותר בטווח הארוך, מכיוון שהוא אוכל אחוז מכלל הקרן שגדלה במשך עשרות שנים (אפקט ריבית דריבית הפוך).</span>
-            </li>
-            <li>
-              <strong>מקדם המרה:</strong> המספר לפיו מחולק סך החיסכון הצבור כדי לקבל את קצבת הזקנה החודשית.
-              <span style={{ display: 'block', fontSize: '0.85rem', color: '#718096' }}>השפעה: קובע כמה כסף תקבל בפועל מדי חודש לפנסיה. מקדם נמוך יותר משמעותו קצבה חודשית גבוהה וטובה יותר עבורך.</span>
-            </li>
-          </ul>
+        {/* איפה מוצאים את הנתונים */}
+        <div style={{ background: '#f8fafc', border: '1px solid #e2e8f0', borderRadius: '8px', padding: '1rem' }}>
+          <h4 style={{ margin: '0 0 0.5rem 0', color: '#2b6cb0', fontSize: '1rem' }}>🔍 איפה מוצאים את הנתונים בחברה שבה אתה נמצא?</h4>
+          <ol style={{ margin: 0, paddingRight: '1.2rem', fontSize: '0.9rem', color: '#2d3748', display: 'flex', flexDirection: 'column', gap: '0.4rem', lineHeight: '1.5' }}>
+            <li><strong>התחברות לאזור האישי:</strong> היכנס לאתר או לאפליקציה של חברת הביטוח או בית ההשקעות המנהל את הקרן שלך (למשל: מגדל, הראל, מנורה, כלל, אלטשולר שחם וכדומה).</li>
+            <li><strong>דו"ח שנתי / תקופתי:</strong> חפש את הדו"ח השנתי האחרון או את "תעודת הזהות הפנסיונית" המופיעה בעמוד הבית באזור האישי.</li>
+            <li><strong>המסקלה הפנסיונית:</strong> ניתן להפיק ריכוז נתונים חינמי או מרוכז דרך אתר המסלקה הפנסיונית של משרד האוצר.</li>
+          </ol>
+          <div style={{ marginTop: '0.8rem', textAlign: 'center' }}>
+            <a 
+              href="mailto:support@clearpensia.com?subject=עזרה במציאת נתונים פנסיוניים" 
+              style={{ display: 'inline-block', background: '#3182ce', color: 'white', padding: '0.4rem 1rem', borderRadius: '6px', textDecoration: 'none', fontWeight: 'bold', fontSize: '0.85rem' }}
+            >
+              מתלבט או לא מסתדר? שלח אלינו מייל לעזרה בחינם
+            </a>
+          </div>
         </div>
-        
-        <div style={{ display: 'flex', alignItems: 'flex-start', gap: '0.6rem', background: '#fffaf0', padding: '0.8rem 1rem', borderRadius: '8px', border: '1px solid #feebc8' }}>
+
+        {/* משמעות השדות ודוגמת שינוי לכל פרמטר */}
+        <div>
+          <h4 style={{ margin: '0 0 0.6rem 0', color: '#1a365d', fontSize: '1rem' }}>📊 משמעות כל שדה, השפעתו על הפנסיה, ודוגמת שינוי:</h4>
+          
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.8rem', fontSize: '0.9rem' }}>
+            
+            <div style={{ background: '#fffaf0', border: '1px solid #feebc8', padding: '0.8rem', borderRadius: '8px' }}>
+              <strong style={{ color: '#c05621' }}>1. דמי ניהול מהפקדה:</strong>
+              <p style={{ margin: '0.3rem 0', color: '#4a5568' }}>נגבים מדי חודש כאחוז מתוך ההפקדה השוטפת (לדוגמה מהשכר או מההפרשות).</p>
+              <p style={{ margin: 0, color: '#2d3748', fontSize: '0.85rem' }}>
+                💡 <strong>דוגמת שינוי והשפעה:</strong> הורדת דמי הניהול מהפקדה מ-<strong>2%</strong> ל-<strong>0%</strong> (חיסכון של 2%) על הפקדה חודשית של 1,000 ₪ חוסכת לך מאות שפות בשנה ומצטברת לאלפי שקלים שנוספים ישירות לחיסכון שלך לפרישה.
+              </p>
+            </div>
+
+            <div style={{ background: '#f0fff4', border: '1px solid #c6f6d5', padding: '0.8rem', borderRadius: '8px' }}>
+              <strong style={{ color: '#276749' }}>2. דמי ניהול מצבירה:</strong>
+              <p style={{ margin: '0.3rem 0', color: '#4a5568' }}>נגבים מדי חודש מסך כל החיסכון המצטבר בקרן (הסכום הגדול שנצבר לאורך השנים).</p>
+              <p style={{ margin: 0, color: '#2d3748', fontSize: '0.85rem' }}>
+                💡 <strong>דוגמת שינוי והשפעה:</strong> זהו הפרמטר הקריטי ביותר! הורדת דמי הניהול מצבירה מ-<strong>0.22%</strong> (המקסימום בחוק) ל-<strong>0.05%</strong> על צבירה של 1,000,000 ₪ יכולה לחסוך לך כ-<strong>1,700 ₪ נטו בשנה</strong> רק בדמי ניהול, סכום שגדל באופן אקספוננציאלי לאורך השנים בזכות אפקט ריבית דריבית.
+              </p>
+            </div>
+
+            <div style={{ background: '#ebf8ff', border: '1px solid #bee3f8', padding: '0.8rem', borderRadius: '8px' }}>
+              <strong style={{ color: '#2b6cb0' }}>3. חשיפה למניות (מסלול השקעה):</strong>
+              <p style={{ margin: '0.3rem 0', color: '#4a5568' }}>קובע איזה נתח מהכסף שלך מושקע בשוק המניות לעומת אג"ח ותשואה מובטחת.</p>
+              <p style={{ margin: 0, color: '#2d3748', fontSize: '0.85rem' }}>
+                💡 <strong>דוגמת שינוי והשפעה:</strong> העלאת החשיפה למניות מ-<strong>30%</strong> ל-<strong>60%</strong> עשויה להעלות את התשואה הממוצעת לאורך זמן (למשל מ-4% ל-6%), מה שמעלה את הקצבה החודשית העתידית בפרישה בעשרות אחוזים (מאות או אלפי שקלים בחודש יותר בקצבה).
+              </p>
+            </div>
+
+          </div>
+        </div>
+
+        <div style={{ display: 'flex', alignItems: 'flex-start', gap: '0.6rem', background: '#fff5f5', padding: '0.8rem 1rem', borderRadius: '8px', border: '1px solid #fed7d7' }}>
           <span style={{ fontSize: '1.2rem' }}>⚠️</span>
-          <span style={{ fontSize: '0.95rem', color: '#7b341e', fontWeight: '700', lineHeight: '1.5' }}>
-            הצהרה חשובה: מערכת זו אינה מהווה ייעוץ פנסיוני או שיווק השקעות כמוגדר בחוק. מדובר בסימולטור לניתוח, השוואת נתונים ובחינת מצב קיים בלבד.
+          <span style={{ fontSize: '0.9rem', color: '#9b2c2c', fontWeight: '700', lineHeight: '1.5' }}>
+            הצהרה חשובה: מערכת זו אינה מהווה ייעוץ פנסיוני או שיווק השקעות כחוק. מדובר בכלי סימולציה ובקרה עצמאי בלבד.
           </span>
         </div>
       </div>
